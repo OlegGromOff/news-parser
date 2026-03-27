@@ -1,5 +1,6 @@
 feedparser
-openai
 requests
+openai
 notion-client
 pytz
+pytrends
