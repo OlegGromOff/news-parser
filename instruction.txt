@@ -1,0 +1,19 @@
+Установить openai feedparser:
+pip3 install feedparser openai python-dotenv
+
+Автоматический запуск: 
+crontab -e
+потом нажми i 
+потом 
+0 */10 * * * python3 /Users/oleggromov/Desktop/IT/Yuliia/news-parser/news_ai.py (истема будет запускаться каждые 10 часа)
+потом esc
+потом напиши :wq и нажми Enter
+
+Проверить что всё сохранилось
+
+
+Vim — сложный редактор. Можно поменять его на nano, он намного проще.
+Сделай так: export EDITOR=nano
+и потом crontab -e
+
+pip3 install requests feedparser
