@@ -1,3 +1,5 @@
 feedparser
 openai
 requests
+notion-client
+pytz
