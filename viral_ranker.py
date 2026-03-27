@@ -1,5 +1,11 @@
 from openai import OpenAI
-from config import OPENAI_API_KEY
+import os  # <-- импортируем os для env переменных
+
+# Получаем ключ OpenAI из переменных окружения
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+if not OPENAI_API_KEY:
+    raise ValueError("❌ Не задана переменная окружения OPENAI_API_KEY")
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
