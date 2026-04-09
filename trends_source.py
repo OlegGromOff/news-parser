@@ -2,11 +2,12 @@ from pytrends.request import TrendReq
 
 KEYWORDS = [
     "Germany economy",
-    "Germany refugees",
-    "Ukraine war",
-    "EU sanctions",
-    "gas prices Europe",
+    "Berlin jobs",
+    "Germany startups",
+    "AI Europe",
     "inflation Germany",
+    "housing Berlin",
+    "cost of living Germany"
     "Ukrainians in Europe"
 ]
 

@@ -9,7 +9,7 @@ SUBREDDITS = [
     "finance",
     "geopolitics",
     "Germany",
-    "ukraine"
+    "Ukrainians in Europe"
 ]
 
 # Ключевые слова для фильтрации новостей
@@ -19,16 +19,35 @@ KEYWORDS = [
     "eu",
     "europe",
     "european union",
-    "ukraine",
+    "Ukrainians in Europe",
     "ukrainian",
     "refugee",
     "migration",
     "economy",
     "inflation",
-    "sanctions",
     "gas",
     "energy"
 ]
+
+# Ключевые слова для ИСКЛЮЧЕНИЯ (война и политика)
+EXCLUDE_KEYWORDS = [
+    "war",
+    "russia",
+    "ukraine",
+    "putin",
+    "nato",
+    "missile",
+    "attack",
+    "military",
+    "army",
+    "weapons",
+    "conflict",
+    "invasion"
+]
+
+def is_not_war(title):
+    title = title.lower()
+    return not any(k in title for k in EXCLUDE_KEYWORDS)
 
 # Проверка, релевантен ли заголовок ключевым словам
 def is_relevant(title):
@@ -60,7 +79,7 @@ def get_reddit_news(limit_per_subreddit=30, min_score=1500, min_comments=200):
             for post in data.get("data", {}).get("children", []):
                 p = post.get("data", {})
                 title = p.get("title", "")
-                if not title or not is_relevant(title):
+                if not title or not is_relevant(title) or not is_not_war(title):
                     continue
                 if p.get("score", 0) < min_score:
                     continue

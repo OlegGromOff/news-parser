@@ -3,15 +3,16 @@ import urllib.parse
 
 TOPICS = [
     "Germany economy",
-    "Germany refugees",
-    "Germany migrants",
-    "EU economy",
-    "European Union sanctions",
-    "Ukraine war",
+    "Berlin startups",
+    "Germany jobs",
+    "EU tech",
+    "AI Europe",
+    "housing Berlin",
+    "cost of living Germany",
+    "inflation Germany",
+    "digital Germany",
     "Ukrainians in Europe",
-    "Ukrainian refugees Europe",
-    "inflation Europe",
-    "gas prices Europe"
+    "remote work Europe"
 ]
 
 def get_google_news():
